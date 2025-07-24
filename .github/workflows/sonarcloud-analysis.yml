@@ -36,5 +36,8 @@ jobs:
           args: >
             -Dsonar.organization=package-explorer
             -Dsonar.projectKey=PACKAGE-EXPLORER_package-explorer
+             -Dsonar.c.file.suffixes=-
+            -Dsonar.cpp.file.suffixes=-
+            -Dsonar.objc.file.suffixes=-
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
