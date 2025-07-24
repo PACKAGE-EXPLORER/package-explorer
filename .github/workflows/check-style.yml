@@ -13,6 +13,7 @@ jobs:
   Check-style:
     runs-on: windows-latest
     if: contains(github.event.pull_request.body, 'The workflow check-style was intentionally skipped.') == false
+
     steps:
       - uses: actions/checkout@master
 
@@ -42,16 +43,17 @@ jobs:
         run: powershell .\CheckFormat.ps1
         if: always()
 
+      - name: Restore dotnet tools
+        working-directory: src
+        run: dotnet tool restore
+        if: always()
+
       - name: Check bite-sized
         working-directory: src
         run: powershell .\CheckBiteSized.ps1
         if: always()
 
-      
-
     # - name: Check TODOs
-  #   working-directory: src
-  #   run: powershell .\CheckTodos.ps1
-  #   if: always()
-
-
+    #   working-directory: src
+    #   run: powershell .\CheckTodos.ps1
+    #   if: always()
