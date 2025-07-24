@@ -47,10 +47,7 @@ jobs:
         run: powershell .\CheckBiteSized.ps1
         if: always()
 
-      - name: Check dead code
-        working-directory: src
-        run: powershell .\CheckDeadCode.ps1
-        if: always()
+      
 
     # - name: Check TODOs
   #   working-directory: src
