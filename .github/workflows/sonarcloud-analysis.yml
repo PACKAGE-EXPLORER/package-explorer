@@ -34,7 +34,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           args: >
-            -Dsonar.organization=PACKAGE-EXPLORER
+            -Dsonar.organization=AIRAM-023
             -Dsonar.projectKey=PACKAGE-EXPLORER_package-explorer
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
